@@ -140,7 +140,6 @@ function toggleLike(postId, userLiked) {
   }
 }
 
-
 function getLikeIcon() {
   return '<i class="far fa-heart"></i>';
 }
