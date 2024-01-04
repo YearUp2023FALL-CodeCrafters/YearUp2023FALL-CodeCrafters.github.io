@@ -14,7 +14,7 @@
 
 
 
-<body class="">
+<body>
     <header>
         <nav class="navbar navbar-expand-lg bg-tan">
             <div class="container-fluid">
@@ -28,74 +28,47 @@
                 
                 
                 <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                          <a class="nav-link text-dark" href="/profile">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active text-dark" aria-current="page" href="/posts">Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link text-dark" onclick="logout()">Logout</button>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" aria-current="page" href="/profile">😊 Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/posts">Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-link text-dark" onclick="logout()">Logout</button>
+                    </li>
                 </ul>
               </div>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="container" style="height: 100vh">
         <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="col-md-10 mt-5 pt-5">
-                <div class="row z-depth-3">
-                    <div class="col-sm-4 bg-white rounded-left">
-
-                        <div class="card-block text-center" id="profile">
-                            <i class="fas fa-user-tie fa-6x mt-5"></i>
-                            <h2 class="font-weight-bold mt-4"></h2>
-                            <p></p>
-
-                        <!-- Edit user button -->
-                            <button id="editBtn"><i class="fas fa-edit fa-2x mb-4"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-8 bg-white rounded-right">
-                        <hr class="bg-white">
-
-                        <div class="row">
-                            <h3 class="mt-2 text-center">Let's connect</h3>
-                            <ul class="list-unstyled d-flex justify-content-center mt-4">
-                                <li><a href="#"><i class="fab fa-facebook-f px-3 h1"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram px-3 h1"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter px-3 h1"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin px-3 h1"></i></a></li>
-                            </ul>
-
-                        </div>
-                        <hr>
-                    </div>
-
-                </div>
-            </div>
+            <div class="card-block text-center" id="profile">
+                <i class="fas fa-user-tie fa-6x mt-5"></i>
+                    <h2 class="font-weight-bold mt-4"></h2>
+                        <!-- this is where our bio is -->
+                        <p></p>
+                        <button class="border-0 bg-transparent" id="editBtn"><i class="fas fa-edit fa-2x mb-4"></i></button>
+            </div>   
         </div>
         
         <div class="row d-flex justify-content-center">
-
-            <div class="col-md-10 mt-5 pt-5">
-       
-                  <form id style="min-height: 120px;">
+            <div class="col-md-10 mt-5">
+                  <form style="min-height: 120px;">
                       <div class="card card-body" >
                         <p>ASK A QUESTION</p>
-                        <textarea id="textarea" placeholder="ask" cols="20" ></textarea>
-                        <div class="form-control mt-2">
-                            <button class="btn btn-primary mt-2" id="postBtn">Post</button>
+                        <textarea id="textarea" placeholder="Ask a question" cols="20" ></textarea>
+                        <div class="form-control border-0 mt-2">
+                            <button class="btn btn-dark mt-2" id="postBtn">Post</button>
                         </div>
                       </div>
                   </form>
-               
             </div>
         </div>
+
     </div> 
     </main>
 

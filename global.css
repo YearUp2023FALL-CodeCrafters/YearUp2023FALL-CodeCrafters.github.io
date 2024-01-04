@@ -105,3 +105,18 @@ footer a {
     border: 0;
     background-color: white;
 }
+
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 5px;
+    background-color: #ffa500;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
