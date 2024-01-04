@@ -1,7 +1,5 @@
 "use strict";
 
-let userData;
-
 window.onload = () => {
   fetchAllPosts();
 };
@@ -24,6 +22,7 @@ async function fetchAllPosts() {
     console.error("Failed to fetch posts", error);
   }
 }
+
 async function likePost(postId) {
   try {
     console.log(`Liking post with ID: ${postId}`);
@@ -121,6 +120,35 @@ function deletePost(postId) {
     });
 }
 
+function checkUserLiked(post) {
+    // CHECKING TO SEE IF USER HAS LIKED THE POST. 
+  return post.likes.find(like => like.username === getLoginData().username);
+}
+
+function toggleLike(postId, userLiked) {
+  const likeButton = document.getElementById(`likeButton_${postId}`);
+
+  if (likeButton) {
+    if (userLiked) {
+      likeButton.innerHTML = getLikeIcon();
+    } else {
+      likePost(postId);
+      likeButton.innerHTML = getUnlikeIcon();
+    }
+  } else {
+    console.error(`Button not found for post with ID ${postId}`);
+  }
+}
+
+
+function getLikeIcon() {
+  return '<i class="far fa-heart"></i>';
+}
+
+function getUnlikeIcon() {
+  return '<i class="fas fa-heart"></i>';
+}
+
 function displayAllPosts(allPosts) {
   let allPostContainer = document.getElementById("allPostContainer");
 
@@ -137,10 +165,12 @@ function displayAllPosts(allPosts) {
     cardBody.innerHTML = `
       <h3 class="card-title">${post.text}</h3>
       <p class="card-text">By: ${post.username}</p>
-      <button class="btn btn-dark text-light" onclick="toggleLike('${post._id}', ${userLiked})" id="likeButton_${post._id}">
-      ${userLiked ? getUnlikeIcon() : getLikeIcon()}
-    </button>
-    <button class="btn btn-dark text-light" onclick="deletePost('${post._id}')">Delete</button>
+      <button class="border-0 bg-transparent text-light" onclick="toggleLike('${post._id}', ${userLiked})" id="likeButton_${post._id}">
+        ${userLiked ? getUnlikeIcon() : getLikeIcon()} 
+      </button>
+      <button class="border-0 bg-transparent text-light" onclick="deletePost('${post._id}')">
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
     `;
 
     card.appendChild(cardBody);
@@ -150,34 +180,6 @@ function displayAllPosts(allPosts) {
   });
 }
 
-function toggleLike(postId, userLiked) {
-   // grabbing the like button id of the post that is being toggled. 
-  const likeButton = document.getElementById(`likeButton_${postId}`);
 
-  if (likeButton) {
-    if (userLiked) {
-      unlikePost(postId);
-      likeButton.innerHTML = getLikeIcon();
-    } else {
-      likePost(postId);
-      likeButton.innerHTML = getUnlikeIcon();
-    }
-  } else {
-    console.error(`Button not found for post with ID ${postId}`);
-  }
-}
-
-function checkUserLiked(post) {
-    // CHECKING TO SEE IF USER HAS LIKED THE POST. 
-  return post.likes.find(like => like.username === getLoginData().username);
-}
-
-function getLikeIcon() {
-  return '<i class="far fa-heart"></i>';
-}
-
-function getUnlikeIcon() {
-  return '<i class="fas fa-heart"></i>';
-}
 
 
