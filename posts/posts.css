@@ -79,3 +79,11 @@ nav h2 {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+.social-icons i {
+  font-size: 20px;
+  /* margin-right: 0; */
+  cursor: pointer;
+  margin: auto;
+  padding: auto;
+}
