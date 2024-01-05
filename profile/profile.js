@@ -30,11 +30,9 @@ function fetchUserData() {
     })
     .then(res => res.json())
     .then(retrievedUserData => {
-        if (retrievedUserData.bio) {
-            profileContainer.querySelector('p').innerText = retrievedUserData.bio;
-        }
-    })
-    .catch((err) => console.error('Error fetching user data:', err));
+        profileContainer.querySelector('p').innerText = retrievedUserData.bio;
+    })    
+    .catch((err) => console.error('Error fetching user data', err));
 }
 
 function addPost(e) {
@@ -89,14 +87,10 @@ function editUser() {
 }
 
 function fetchAndDisplayUpdatedUserData(updatedUserData) {
-    // if (!updatedUserData || !updatedUserData.username) {
-    //     console.error('Invalid updated user data:', updatedUserData);
-    //     return;
-    // }
 
-    const updatedUsername = updatedUserData.username;
+    const updatedBio = updatedUserData.username;
 
-    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${updatedUsername}`, {
+    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${updatedBio}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -106,10 +100,9 @@ function fetchAndDisplayUpdatedUserData(updatedUserData) {
     })
     .then(res => res.json())
     .then(retrievedUserData => {
-        console.log('Retrieved User Data:', retrievedUserData);
         displayProfile(retrievedUserData);
     })
-    .catch(err => console.error('Error fetching updated user data:', err));
+    .catch(err => console.error('Error fetching updated user data', err));
 }
 
 function displayProfile(retrievedUserData) {
