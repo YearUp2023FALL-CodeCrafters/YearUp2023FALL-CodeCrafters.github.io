@@ -8,16 +8,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://api.fontshare.com/v2/css?f[]=quilon@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/global.css">
-
-    
 </head>
 
-<body class="">
+<body>
+
     <header>
-        <nav class="navbar navbar-expand-lg bg-orange">
+        <nav class="navbar navbar-expand-lg bg-tan">
             <div class="container-fluid">
-              <a class="navbar-brand text-light" href="/">MiCROBLOGGING</a>
+              <a class="navbar-brand text-dark" href="/">🧠StudyBuddy</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -26,118 +26,116 @@
                 </ul>
                 
                 
-                <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                          <a class="nav-link text-light" href="/profile">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active text-light" aria-current="page" href="/posts">Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link text-light" onclick="logout()">Logout</button>
-                        </li>
+                <ul class="navbar-nav ml-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" aria-current="page" href="/profile">😊 Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/posts">Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-link text-dark" onclick="logout()">Logout</button>
+                    </li>
                 </ul>
               </div>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="container" style="height: 100vh">
         <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="col-md-10 mt-5 pt-5">
-                <div class="row z-depth-3">
-                    <div class="col-sm-4 bg-white rounded-left">
+            <div class="card-block text-center" id="profile">
+                <i class="fas fa-user-tie fa-6x mt-5"></i>
+                    <h2 class="font-weight-bold mt-4"></h2>
+                        <!-- this is where our bio is -->
+                        <p></p>
+                        <button class="border-0 bg-transparent" id="editBtn"><i class="fas fa-edit fa-2x mb-4"></i></button>
+            </div>   
 
-                        <div class="card-block text-center" id="profile">
-                            <i class="fas fa-user-tie fa-6x mt-5"></i>
-                            <h2 class="font-weight-bold mt-4"></h2>
-                            <p>Web Designer</p>
-                        
-                            <button id="editBtn"><i class="fas fa-edit fa-2x mb-4"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-8 bg-white rounded-right">
-
-
-                        <hr class="bg-white">
-
-                        <div class="row">
-                            <h3 class="mt-2 text-center">Let's connect</h3>
-                            <ul class="list-unstyled d-flex justify-content-center mt-4">
-                                <li><a href="#"><i class="fab fa-facebook-f px-3 h1"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram px-3 h1"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter px-3 h1"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin px-3 h1"></i></a></li>
-                            </ul>
-
-                        </div>
-                        <hr>
-                    </div>
-
-                </div>
-            </div>
         </div>
-
-
-        <!-- To create text area for posts -->
+        
         <div class="row d-flex justify-content-center">
-
-            <div class="col-md-10 mt-5 pt-5">
-       
-                  <div style="min-height: 120px;">
+            <div class="col-md-10 mt-5">
+                  <form style="height: 500px;">
                       <div class="card card-body" >
-                        <p>Hello Welcome back!</p>
-                        <textarea id="textarea" placeholder="Share your insight..." cols="20" ></textarea>
-                        <div class="form-control mt-2">
-                            <button class="btn btn-primary mt-2" id="postBtn">Post</button>
+
+                        <p>ASK A QUESTION</p>
+                        <textarea id="textarea" placeholder="Ask a question" cols="100" ></textarea>
+                        <div class="form-control border-0 mt-2">
+                            <button class="btn btn-dark mt-2" id="postBtn">Post</button>
+
                         </div>
                       </div>
-                  </div>
-               
+                  </form>
             </div>
         </div>
-
-       
 
     </div> 
     </main>
 
-    <footer class="">
-        <div class="container">
+    <footer class="container-fluid mt-3 bg-tan">
 
-            <div class="row">
-                <h2 class="text-center mt-3">CodeCraftersBlog</h2>
+        <div class="container mt-2">
+    
+          <div class="row ">
+    
+            <div class="col-md-4">
+              <h2 class="mt-2">Explore</h2>
+              <ul class="list-unstyled">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Tutors </a></li>
+                <li><a href="#">FAQ </a></li>
+    
+              </ul>
+    
             </div>
-
-            <div class="row">
-                <p class="footer-p text-center">Connect with others, share your insights, and stay updated on the latest conversations in your network</p>
+    
+            <div class="col-md-4">
+              <h2 class="mt-2">Your Profile</h2>
+              <ul class="list-unstyled">
+                <li><a href="#">Edit Profile</a></li>
+                <li><a href="#">My Posts</a></li>
+                <li><a href="#">Notifications</a></li>
+    
+              </ul>
+    
             </div>
-
-
-            <div class="row">
-                <div class="col">
-                   <a href=""><h3>Legal Stuff</h3></a>
-                  
-                </div>
-                <!-- <div class="vertical"></div> -->
-
-                <div class="col">
-                    <a href=""><h3>Privacy Policy</h3></a>
-                   
-                </div>
-                <!-- <div class="vertical"></div> -->
-
-                <div class="col">
-                    <a href=""><h3 id="line">Security</h3></a>
-                </div>
+    
+    
+            <div class="col-md-4">
+              <h2 class="mt-2 p-2">contact Us</h2>
+              <p>Stay updated with the latest tutoring tips, study materials, and educational news.</p>
+    
+              <div class="flex-row">
+            
+                <a href="#"><i class="fab fa-facebook "></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+    
+              </div>
+    
+            
+    
             </div>
-
-            <div class="row">
-                <p> &copy YearUp 2024 CodeCraftersBlog, Inc  </p>
-            </div>
+    
+          </div>
+    
+    
         </div>
+    
+        <div class="bottom-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>&copy; 2024 YearUp StudyBuddy - Tutoring Microblog. All rights reserved. | Designed for Students</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
     </footer>
 
     <script src="/auth.js"></script>
