@@ -18,6 +18,7 @@ function fetchUserData() {
 
     if (userData.username) {
         profileContainer.querySelector('h2').innerText = userData.username;
+        
     }
 
     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${userData.username}`, {
