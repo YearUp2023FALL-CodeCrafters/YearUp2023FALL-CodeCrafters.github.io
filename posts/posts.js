@@ -105,62 +105,50 @@ function checkUserLiked(post) {
   return post.likes.find(like => like.username === getLoginData().username);
 }
 
-// function toggleLike(postId, userLiked) {
-//   // needs a unique id bc each button will have a different ui 
+async function toggleLike(postId, userLiked) {
+  const likeButton = document.getElementById(`likeButton_${postId}`);
+
+  if (likeButton) {
+    likeButton.innerHTML = userLiked ? emptyHeartIcon() : filledHeartIcon();
+
+    try {
+      // if the userLiked is not true, we're going to run the likePost req and pass in the postID. 
+      if (!userLiked) {
+        await likePost(postId);
+      }
+    } catch (error) {
+      console.error("YOU ALREADY LIKED THIS POST", error);
+    }
+  }
+}
+
+// async function toggleLike(postId, userLiked) {
 //   const likeButton = document.getElementById(`likeButton_${postId}`);
 
 //   if (likeButton) {
-//     // checks if userLiked is true, if true heart filled icon shows, if not likePost will run w/ the postID & the empty heart filled will show.  
-//     if (userLiked) {
-//       likeButton.innerHTML = filledHeartIcon();
-//     } else {
-//       likePost(postId);
-//       likeButton.innerHTML = emptyHeartIcon();
+//     // Update the UI immediately
+//     likeButton.innerHTML = userLiked ? filledHeartIcon() : emptyHeartIcon();
+
+//     try {
+//       // Send the like request
+//       if (!userLiked) {
+//         await likePost(postId);
+//       }
+//     } catch (error) {
+//       console.error("Failed to like", error);
 //     }
 //   }
 // }
-
-async function toggleLike(postId) {
-  const token = getLoginData().token;
-
-  try {
-    // Fetch the post to get the updated like status
-    const response = await fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    const updatedPost = await response.json();
-    
-    // Check if the user has liked the post
-    const userLiked = checkUserLiked(updatedPost);
-
-    // Update the like button accordingly
-    const likeButton = document.getElementById(`likeButton_${postId}`);
-
-    if (likeButton) {
-      if (userLiked) {
-        likeButton.innerHTML = filledHeartIcon();
-      } else {
-        // If the user hasn't liked, run the likePost function
-        await likePost(postId);
-        likeButton.innerHTML = emptyHeartIcon();
-      }
-    }
-  } catch (error) {
-    console.error("Failed to toggle like:", error);
-  }
-}
 
 
 function filledHeartIcon() {
   return '<i class="fa-solid fa-heart"></i>';
 }
 
+// unfilled icon 
 function emptyHeartIcon() {
   return '<i class="fa-regular fa-heart"</i>'
+
 }
 
 function displayAllPosts(allPosts) {
@@ -172,6 +160,8 @@ function displayAllPosts(allPosts) {
 
     const card = document.createElement("div");
     card.className = "card mb-3";
+     //giving our card an id. 
+    card.id = `postCard_${post._id}`;
 
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";
@@ -182,15 +172,16 @@ function displayAllPosts(allPosts) {
 
     if (userLiked) {
       likeButton.innerHTML = filledHeartIcon();
+      console.log(`WE JUST LIKED THE POST`)
     } else {
       likeButton.innerHTML = emptyHeartIcon();
+      console.log(`WE JUST UNLIKED THE POST`)
     }
 
     likeButton.onclick = async function() {
       await toggleLike(post._id);
     };
     
-
     const deleteButton = document.createElement("button");
     deleteButton.className = "border-0 bg-transparent text-light";
     deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
@@ -207,8 +198,6 @@ function displayAllPosts(allPosts) {
     cardBody.appendChild(deleteButton);
     card.appendChild(cardBody);
 
-    //giving our card an id. 
-    card.id = `postCard_${post._id}`;
     allPostContainer.appendChild(card);
   });
 }
