@@ -140,7 +140,6 @@ async function toggleLike(postId, userLiked) {
 //   }
 // }
 
-
 function filledHeartIcon() {
   return '<i class="fa-solid fa-heart"></i>';
 }
