@@ -21,9 +21,13 @@ This project involves building a microblogging website where users can share sho
 The website should include at least four pages to be considered complete:
 
 1. Landing/Login Page
-2. Registration Page
-3. Posts Page
-4. Profile Page
+2. ![signingPage](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/fd5858a9-e129-4328-b244-be988cbfa7a5)
+3. Registration Page
+4. ![RegistrationPage](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/906b9c20-9f08-4650-a446-bc87c3138e35)
+5. Posts Page
+6. ![PostPage](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/6f7a1904-8adb-494c-928f-302a5a10283b)
+7. Profile Page
+8. ![profilePage](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/d2198b2a-ed54-451d-991a-06b340f94325)
 
 ## Access Requirements
 
@@ -55,11 +59,7 @@ Feel free to explore their GitHub profiles for more information.
 
 ## API Documentation
 
-Refer to the [MicroblogLite API documentation](provided-url) for detailed information on API endpoints.
-
-## Backup API
-
-In case the main server is offline, a backup copy of the MicroblogLite API may be available at [backup-url].
+Refer to the [MicroblogLite API documentation]([provided-url](http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts) for detailed information on API endpoints.
 
 ## License
 
