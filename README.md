@@ -29,6 +29,24 @@ The website should include at least four pages to be considered complete:
 7. Profile Page
 8. ![profilePage](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/d2198b2a-ed54-451d-991a-06b340f94325)
 
+## A few more snippets of our website
+![figma](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/33bf7469-1492-45f8-85ea-81e193a5b8b5)
+
+![page1](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/d482b9a4-e129-4bb1-82da-68f0829d9351)
+
+![page2](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/14eb20cf-9efc-49c5-bf6c-4c3893afd2e3)
+
+![page 3](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/79a92aef-8470-45db-a21f-86587dead4f6)
+
+![page4](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/a97847d3-1497-46bf-ae68-676281cb17dc)
+
+![page5](https://github.com/YearUp2023FALL-CodeCrafters/YearUp2023FALL-CodeCrafters.github.io/assets/144297126/0bd6515e-8d7a-4cd0-9b03-72be7e9d1309)
+
+
+
+
+
+
 ## Access Requirements
 
 To view any user content on the website, visitors must first log in as a user. The website follows a "walled garden" approach.
@@ -64,3 +82,4 @@ Refer to the [MicroblogLite API documentation]([provided-url](http://microblogli
 ## License
 
 This project is licensed under the [MIT License] 
+
